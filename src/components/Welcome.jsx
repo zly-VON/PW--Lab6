@@ -1,3 +1,4 @@
+// Welcome.js
 import React, { useState } from 'react';
 import ExerciseList from './ExerciseList';
 
@@ -11,7 +12,7 @@ const Welcome = ({ onSelectDifficulty }) => {
   };
 
   return (
-    <div className={`welcome`}>
+    <div className={`welcome}`}>
       <h1>Welcome to the Gym Workout Page!</h1>
       <p>Please select your difficulty level:</p>
       <button className={`welcome-button ${selectedDifficulty === 'beginner' ? 'selected' : ''}`} onClick={() => handleDifficultySelect('beginner')}>Beginner</button>

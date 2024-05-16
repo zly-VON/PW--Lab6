@@ -1,6 +1,7 @@
 // ExerciseList.js
 import React, { useState, useEffect } from 'react';
 import fetchData from './api';
+import ExerciseAction from './ExerciseAction';
 
 const ExerciseList = ({ difficulty }) => {
   const [exercises, setExercises] = useState([]);
@@ -39,6 +40,7 @@ const ExerciseList = ({ difficulty }) => {
               <p><strong>Muscle:</strong> {exercise.muscle}</p>
               <p><strong>Equipment:</strong> {exercise.equipment}</p>
               <p><strong>Difficulty:</strong> {exercise.difficulty}</p>
+              <ExerciseAction exercise={exercise} />
             </li>
           ))}
         </ul>
