@@ -18,8 +18,19 @@ const Welcome = ({ onSelectDifficulty }) => {
     setSelectedDifficulty(''); 
   };
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode((prev) => !prev);
+    if (!isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  };
+
   return (
-    <div className={`welcome}`}>
+    <div className={`welcome ${isDarkMode ? 'dark-mode' : ''}`}>
       <h1>Welcome to the Gym Workout Page!</h1>
       <p>Please select your difficulty level:</p>
       <button className={`welcome-button ${selectedDifficulty === 'beginner' ? 'selected' : ''}`} onClick={() => handleDifficultySelect('beginner')}>Beginner</button>
